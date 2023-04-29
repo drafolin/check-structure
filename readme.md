@@ -40,7 +40,7 @@ checkStructure(structure, object); // true
 
 ## Error mode
 
-The function can also be called in error mode, which will throw an error if the structure is not respected.
+The function can also be called in error mode, which will throw an error if the structure is not respected. This is often used in unit checks.
 
 ```javascript
 const {checkStructureOrThrow} = require('check-structure');
