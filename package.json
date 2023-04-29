@@ -1,9 +1,8 @@
 {
 	"name": "check-structure",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Easily check the structure of any javascript object!",
 	"main": "index.js",
-	"type": "module",
 	"types": "./types/index.d.ts",
 	"repository": {
 		"type": "git",

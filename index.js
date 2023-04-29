@@ -1,4 +1,4 @@
-export const checkStructuresOrThrow = (a, struct, path) => {
+exports.checkStructuresOrThrow = (a, struct, path) => {
 	for (const key in a) {
 		if (struct[key] === undefined) {
 			throw Error(`Key ${path ? `${path}.${key}` : key} is not in the interface`);
@@ -16,7 +16,7 @@ export const checkStructuresOrThrow = (a, struct, path) => {
 	return;
 };
 
-export const checkStructures = (a, struct, path) => {
+exports.checkStructures = (a, struct, path) => {
 	try {
 		checkStructuresOrThrow(a, struct, path);
 		return true;
@@ -25,5 +25,4 @@ export const checkStructures = (a, struct, path) => {
 	}
 };
 
-
-export default checkStructures;
+exports.default = exports.checkStructures;
