@@ -17,10 +17,20 @@
 		"comparison",
 		"check"
 	],
+	"scripts": {
+		"test": "mocha --require ts-node/register tests/**/*.test.ts"
+	},
 	"author": "drafolin",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/drafolin/check-structure/issues"
 	},
-	"homepage": "https://github.com/drafolin/check-structure#readme"
+	"homepage": "https://github.com/drafolin/check-structure#readme",
+	"devDependencies": {
+		"@types/chai": "^4.3.5",
+		"@types/mocha": "^10.0.1",
+		"chai": "^4.3.7",
+		"mocha": "^10.2.0",
+		"ts-node": "^10.9.1"
+	}
 }
