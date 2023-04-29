@@ -1,7 +1,7 @@
 const checkStructuresOrThrow = (a, struct, path) => {
-	for (const key in a) {
-		if (struct[key] === undefined) {
-			throw Error(`Key ${path ? `${path}.${key}` : key} is not in the interface`);
+	for (const key in struct) {
+		if (a[key] === undefined) {
+			throw Error(`Key ${path ? `${path}.${key}` : key} is not in the source object`);
 		}
 		if (typeof a[key] === 'object') {
 			return checkStructuresOrThrow(a[key], struct[key], path ? `${path}.${key}` : key);
