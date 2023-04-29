@@ -1,4 +1,4 @@
-export const compareStructures = (a, struct, path) => {
+export const compareStructuresOrThrow = (a, struct, path) => {
 	for (const key in a) {
 		if (struct[key] === undefined) {
 			throw Error(`Key ${path ? `${path}.${key}` : key} is not in the interface`);
@@ -15,5 +15,15 @@ export const compareStructures = (a, struct, path) => {
 	}
 	return;
 };
+
+export const compareStructures = (a, struct, path) => {
+	try {
+		compareStructuresOrThrow(a, struct, path);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
+
 
 export default compareStructures;
