@@ -1,5 +1,6 @@
 import { describe, it } from "mocha";
-import { checkStructureOrThrow, checkStructure } from "..";
+import { checkStructureOrThrow } from "..";
+import checkStructure from "..";
 import { expect } from "chai";
 
 describe("checkStructuresOrThrow", () => {
