@@ -1,4 +1,4 @@
-const checkStructuresOrThrow = (a, struct, path) => {
+const checkStructureOrThrow = (a, struct, path) => {
 	for (const key in struct) {
 		if (a[key] === undefined) {
 			throw Error(`Key ${path ? `${path}.${key}` : key} is not in the source object`);
@@ -16,17 +16,16 @@ const checkStructuresOrThrow = (a, struct, path) => {
 	return;
 };
 
-const checkStructures = (a, struct, path) => {
+const checkStructure = (a, struct, path) => {
 	try {
-		checkStructuresOrThrow(a, struct, path);
+		checkStructureOrThrow(a, struct, path);
 		return true;
 	} catch (e) {
 		return false;
 	}
 };
 
-module.exports = {
-	checkStructures,
-	checkStructuresOrThrow,
-	default: checkStructures
-};
+checkStructure.checkStructureOrThrow = checkStructureOrThrow;
+checkStructure.checkStructure = checkStructure;
+checkStructure.default = checkStructure;
+module.exports = checkStructure;
