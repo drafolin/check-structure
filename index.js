@@ -39,13 +39,13 @@ const checkStructureOrThrow = (a, struct, path) => {
 			return;
 		}
 
-		if (typeof date !== 'string') {
-			throw Error('Invalid date');
+		if (typeof a !== 'string') {
+			throw Error('Invalid date (not a string)');
 		}
 
-		const validDate = new Date(date);
+		const validDate = new Date(a);
 		if (isNaN(validDate.valueOf()))
-			throw new Error('Invalid date');
+			throw new Error('Invalid date (not parsable)');
 
 		return;
 	}

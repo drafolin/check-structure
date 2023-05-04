@@ -53,6 +53,16 @@ describe("checkStructuresOrThrow", () => {
 		const b = [{ a: Number }, { a: Number }];
 		expect(() => checkStructureOrThrow(a, b)).to.throw();
 	});
+
+	it("should check each date in the object when the schema contains a date", async () => {
+		const a = { a: new Date() };
+		const b = { a: Date };
+		checkStructureOrThrow(a, b);
+
+		const c = { a: new Date().toString() };
+		const d = { a: Date };
+		expect(() => checkStructureOrThrow(c, d)).to.not.throw();
+	});
 });
 
 describe("checkStructures", () => {
