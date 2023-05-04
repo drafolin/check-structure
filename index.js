@@ -33,6 +33,24 @@ const checkStructureOrThrow = (a, struct, path) => {
 		}
 		return;
 	}
+
+	if (struct.name.toLowerCase() === 'date') {
+		if (a instanceof Date) {
+			return;
+		}
+
+		if (typeof date !== 'string') {
+			throw Error('Invalid date');
+		}
+
+		const validDate = new Date(date);
+		if (isNaN(validDate.valueOf()))
+			throw new Error('Invalid date');
+
+		return;
+	}
+
+	throw Error(`Invalid type ${struct.name}`);
 };
 
 const checkStructure = (a, struct, path) => {
