@@ -4,13 +4,13 @@ const checkStructureOrThrow = (a, struct, path) => {
 			throw Error(`${path ? path : "input"} is not of type array`);
 		if (struct.length === 1) {
 			for (i in a) {
-				checkStructureOrThrow(a[i], struct[0], path ? `${path}.${key}[${i}]` : `key[${i}]`);
+				checkStructureOrThrow(a[i], struct[0], path ? `${path}[${i}]` : `[${i}]`);
 			}
 		} else {
 			if (a.length !== struct.length)
-				throw Error(`Key ${path ? `${path}.${key}` : key} is not of length ${struct.length}`);
+				throw Error(`Key ${path ? `${path}` : "<source array>"} is not of length ${struct.length}`);
 			for (i in a)
-				checkStructureOrThrow(a[i], struct[i], path ? `${path}.${key}[${i}]` : `key[${i}]`);
+				checkStructureOrThrow(a[i], struct[i], path ? `${path}[${i}]` : `[${i}]`);
 		}
 		return;
 	}
