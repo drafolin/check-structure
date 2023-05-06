@@ -32,5 +32,15 @@
 		"chai": "^4.3.7",
 		"mocha": "^10.2.0",
 		"ts-node": "^10.9.1"
-	}
+	},
+	"funding": [
+		{
+			"type": "buy me a coffee",
+			"url": "https://www.buymeacoffee.com/drafolin"
+		},
+		{
+			"type": "ko-fi",
+			"url": "https://ko-fi.com/drafolin"
+		}
+	]
 }
